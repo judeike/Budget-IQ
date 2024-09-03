@@ -1,6 +1,8 @@
+export const wait = () => new Promise (res => setTimeout(res, Math.random() * 4000))
+
 const generateRandomColor = () => {
   const existingBudgetLength = fetchData("budgets")?.length ?? 0;
-  return `${existingBudgetLength * 34} 65% 50%`
+  return `${existingBudgetLength * 39} 61% 40%`
 }
 
 // Local storage
@@ -10,13 +12,16 @@ export const fetchData = (key) => {
 
 // create budget
 export const createBudget = ({
-  name, amount
+  name, timeframe, budgetGoal, monthlyIncome, monthlyExpnese
 }) => {
   const newItem = {
     id: crypto.randomUUID(),
     name: name,
+    timeframe: timeframe,
+    budgetGoal: +budgetGoal,
+    monthlyIncome: +monthlyIncome,
+    monthlyExpnese: +monthlyExpnese,
     createdAt: Date.now(),
-    amount: +amount,
     color: generateRandomColor()
   }
   const existingBudgets = fetchData("budgets") ?? [];
