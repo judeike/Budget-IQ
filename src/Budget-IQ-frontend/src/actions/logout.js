@@ -1,13 +1,24 @@
+// rrd imports
 import { redirect } from "react-router-dom";
-import { deleteItem } from "../helpers";
+
+// library
 import { toast } from "react-toastify";
 
-export async function loggedoutAction(){
-    //delete or remove user
-    deleteItem({
-        key: "userName"
-    })
-    toast.success("Account deleted") //this should be based on the response in the backend.
-    //redirect
-    return redirect("/")
+// helpers
+import { deleteItem } from "../helpers";
+
+export async function logoutAction() {
+  // delete the user
+  deleteItem({
+    key: "userName"
+  })
+  deleteItem({
+    key: "budgets"
+  })
+  deleteItem({
+    key: "expenses"
+  })
+  toast.success("You’ve deleted your account!")
+  // return redirect
+  return redirect("/")
 }
