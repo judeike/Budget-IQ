@@ -78,7 +78,7 @@ const BudgetPage = () => {
         <span className="accent">{budgets.name}</span> Overview
       </h1>
       <div className="flex-lg">
-        <BudgetItem budgets={budgets} />
+        <BudgetItem budgets={budgets}  showDelete={true}/>
         <AddExpenseForm budgets={[budgets]} 
 />
       </div>
