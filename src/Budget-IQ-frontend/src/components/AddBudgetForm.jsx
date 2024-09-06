@@ -32,23 +32,54 @@ const AddBudgetForm = () => {
         ref={formRef}
       >
         <div className="grid-xs">
-          <label htmlFor="newBudget">Budget Name</label>
+          <label htmlFor="newBudget">Budget Plan</label>
           <input
             type="text"
             name="newBudget"
             id="newBudget"
-            placeholder="e.g., Groceries"
+            placeholder="e.g., Plan or Goal for budget"
             required
             ref={focusRef}
           />
         </div>
         <div className="grid-xs">
-          <label htmlFor="newBudgetAmount">Amount</label>
+          <label htmlFor="budgetTime">Budget Time Frame</label>
+          <input
+            type="text"
+            name="budgetTime"
+            id="budgetTime"
+            placeholder="e.g., Jan 2021 to jan 2024"
+            required
+          />
+        </div>
+        <div className="grid-xs">
+          <label htmlFor="budgetedGoal">Planed Goal</label>
+          <input
+            type="text"
+            name="budgetedGoal"
+            id="budgetedGoal"
+            placeholder="e.g., 20000"
+            required
+          />
+        </div>
+        <div className="grid-xs">
+          <label htmlFor="monthlyIncome">Monthly Income</label>
+          <input
+            type="text"
+            name="monthlyIncome"
+            id="monthlyIncome"
+            placeholder="e.g., 2400"
+            required
+            inputMode="decimal"
+          />
+        </div>
+        <div className="grid-xs">
+          <label htmlFor="monthlyExpenses">Monthly Expenses</label>
           <input
             type="number"
             step="0.01"
-            name="newBudgetAmount"
-            id="newBudgetAmount"
+            name="monthlyExpenses"
+            id="monthlyExpenses"
             placeholder="e.g., $350"
             required
             inputMode="decimal"
